@@ -19,7 +19,7 @@ class Reader
       $this->code = $object->code;
       $this->email = $object->email;
       $this->image = $object->image;
-      $this->id = $object->id;
+      $this->id = isset($object->id)? $object->id : null;
    }
 
    /**

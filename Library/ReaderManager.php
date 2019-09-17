@@ -1,7 +1,7 @@
 <?php
 
 
-class ReaderManager extends Reader
+class ReaderManager
 {
    protected $conn;
    public function __construct()
@@ -40,25 +40,24 @@ class ReaderManager extends Reader
    public function getReader($id)
    {
 
-      $sql = "SELECT * FROM reader WHERE id='$id'";
+      $sql = "SELECT * FROM reader WHERE id=$id";
       return $this->queryData($sql);
 
    }
    public function editReader($object)
    {
-      $sql = "UPDATE reader SET code='$object->code',name='$object->name',email='$object->email',address='$object->address',phone='$object->phone',image='$object->image'";
 
    }
 
    public function deleteReader($id)
    {
-      $sql = "DELETE FROM reader WHERE id='$id'";
+      $sql = "DELETE FROM reader WHERE id=$id";
       return $this->control($sql);
 
    }
    public function addReader($object)
    {
-      $sql = "INSERT INTO reader (code,name,email,address,phone,image)  VALUES ('".$object->getCode()."','".$object->getName()."','".$object->getEmail()."','".$object->getAddress()."',$object->getPhone(),'".$object->getImage()."')";
+      $sql = "INSERT INTO reader (code,name,email,address,phone,image)  VALUES ('".$object->getCode()."','".$object->getName()."','".$object->getEmail()."','".$object->getAddress()."',".$object->getPhone().",'".$object->getImage()."')";
       return $this->control($sql);
 
    }
