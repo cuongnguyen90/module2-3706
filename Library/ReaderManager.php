@@ -14,8 +14,9 @@ class ReaderManager
    private function queryData($sql)
    {
       $stmt = $this->conn->prepare($sql);
+      $stmt->setFetchMode(PDO::FETCH_OBJ);
       $stmt->execute();
-      $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+      $result = $stmt->fetchAll();
       return $result;
    }
 
@@ -41,7 +42,12 @@ class ReaderManager
    {
 
       $sql = "SELECT * FROM reader WHERE id=$id";
-      return $this->queryData($sql);
+      $stmt = $this->conn->prepare($sql);
+      $stmt->setFetchMode(PDO::FETCH_OBJ);
+      $stmt->execute();
+      $result = $stmt->fetch();
+      $reader = new Reader($result);
+      return $reader;
 
    }
    public function editReader($object)

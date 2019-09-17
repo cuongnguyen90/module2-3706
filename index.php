@@ -76,7 +76,7 @@ $readers = $readerManager->getAll();
              <table class="table table-hover">
                <thead>
                <tr>
-                   <td>STT</td>
+                   <th>STT</th>
                   <th>Code</th>
                   <th>Name</th>
                   <th>Email</th>
