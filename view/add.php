@@ -4,11 +4,11 @@ include_once '../Library/Reader.php';
 include_once '../Library/ReaderManager.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'
-    && isset($_POST['name'])
-    && isset($_POST['code'] )
-    && isset($_POST['email'])
-    && isset($_POST['address'])
-    && isset($_POST['phone'])
+    && empty(!$_POST['name'])
+    && empty(!$_POST['code'] )
+    && empty(!$_POST['email'])
+    && empty(!$_POST['address'])
+    && empty(!$_POST['phone'])
 ) {
    $data = (object)[
       'name' => $_POST['name'],
