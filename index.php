@@ -97,7 +97,7 @@ $readers = $readerManager->getAll();
                      <td><?= $reader->getPhone() ?></td>
                      <td><img src="images/<?= $reader->getImage() ?>" alt="" width="50px"></td>
                      <td>
-                         <a name="" id="" class="btn btn-warning" href="view/detail.php?id=<?=$reader->getId();?>"
+                         <a name="" id="" class="btn btn-warning" href="view/reader/detail.php?id=<?=$reader->getId();?>"
                                 role="button">Edit</a>
                          <a onclick="checkDelete(this)" data-id="<?=$reader->getId();?>" class="btn btn-danger" data-toggle="modal" href="#modal-confirm">Delete</a>
                      </td>
@@ -117,7 +117,7 @@ $readers = $readerManager->getAll();
                              <h4 class="modal-title">Add New</h4>
                          </div>
                          <div class="modal-body">
-                             <form action="view/add.php" method="post" role="form">
+                             <form action="view/reader/add.php" method="post" role="form">
 
                                  <div class="form-group">
                                      <label for="">Code</label>
@@ -188,7 +188,7 @@ $readers = $readerManager->getAll();
         function checkDelete(object) {
             let data = object.getAttribute('data-id');
             let confirm = document.getElementById('confirm-delete');
-                confirm.href = 'view/delete.php?id='+data;
+                confirm.href = '../reader/view/delete.php?id='+data;
         }
 
 

@@ -1,7 +1,7 @@
 <?php
-include_once '../DBConnect/DBConnect.php';
-include_once '../Library/Reader.php';
-include_once '../Library/ReaderManager.php';
+include_once '../../DBConnect/DBConnect.php';
+include_once '../../Library/Reader.php';
+include_once '../../Library/ReaderManager.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'
     && empty(!$_POST['name'])
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
     $reader = new Reader($data);
     $manager = new ReaderManager();
     $manager->editReader($reader);
-    header("Refresh:0; url=../index.php");
+    header("Refresh:0; url=../../index.php");
 
 
 }

@@ -1,7 +1,7 @@
 <?php
-include_once '../DBConnect/DBConnect.php';
-include_once '../Library/Reader.php';
-include_once '../Library/ReaderManager.php';
+include_once '../../DBConnect/DBConnect.php';
+include_once '../../Library/Reader.php';
+include_once '../../Library/ReaderManager.php';
 
 if ($_GET['id']) {
    $readerManager = new ReaderManager();
@@ -99,7 +99,7 @@ if ($_GET['id']) {
             </div>
             <div class="form-group">
                <label for="">Image:</label>
-               <img src="../images/<?= $reader->getImage()?>" class="img-responsive img-circle" alt="Image" width="80px">
+               <img src="../../images/<?= $reader->getImage()?>" class="img-responsive img-circle" alt="Image" width="80px">
             </div>
             <div class="form-group hidden">
                <label for="">ID :</label>
@@ -107,7 +107,7 @@ if ($_GET['id']) {
             </div>
             <div class="form-group">
                <div class="col-sm-4 col-sm-offset-4" style="text-align: center">
-                  <button type="button" class="btn btn-danger">Cancel</button>
+                  <a type="button" href="../../index.php" class="btn btn-danger">Cancel</a>
                   <button type="submit" class="btn btn-success">Update</button>
                </div>
             </div>
