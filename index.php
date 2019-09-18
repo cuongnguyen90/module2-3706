@@ -97,7 +97,7 @@ $readers = $readerManager->getAll();
                      <td><?= $reader->getPhone() ?></td>
                      <td><img src="images/<?= $reader->getImage() ?>" alt="" width="50px"></td>
                      <td>
-                         <a name="" id="" class="btn btn-warning" href="view/edit.php?id=<?=$reader->getId();?>"
+                         <a name="" id="" class="btn btn-warning" href="view/detail.php?id=<?=$reader->getId();?>"
                                 role="button">Edit</a>
                          <a onclick="checkDelete(this)" data-id="<?=$reader->getId();?>" class="btn btn-danger" data-toggle="modal" href="#modal-confirm">Delete</a>
                      </td>
