@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
    $manager = new ReaderManager();
    $manager->addReader($reader);
    header("Refresh:0; url=../index.php");
+
 }
 else{
    echo "Error";

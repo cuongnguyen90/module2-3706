@@ -46,13 +46,14 @@ class ReaderManager
       $stmt->setFetchMode(PDO::FETCH_OBJ);
       $stmt->execute();
       $result = $stmt->fetch();
-      $reader = new Reader($result);
-      return $reader;
+      return $result;
 
    }
    public function editReader($object)
    {
-
+      $sql = "UPDATE reader SET name= '".$object->getName()."',code = '".$object->getCode()."',email='".$object->getEmail()."',address='".$object->getAddress()."',phone=".$object->getPhone().",image='".$object->getImage()."' WHERE id='".$object->getId()."'";
+      //var_dump($sql);die();
+      return $this->control($sql);
    }
 
    public function deleteReader($id)
