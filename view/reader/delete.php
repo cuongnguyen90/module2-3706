@@ -1,7 +1,7 @@
 <?php
-include_once '../DBConnect/DBConnect.php';
-include_once '../Library/Reader.php';
-include_once '../Library/ReaderManager.php';
+include_once '../../DBConnect/DBConnect.php';
+include_once '../../Library/Reader.php';
+include_once '../../Library/ReaderManager.php';
 
 if ($_GET['id']){
    $detail = new ReaderManager();
